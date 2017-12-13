@@ -1,1 +1,1 @@
-include "calculadora-ear", "calculadora-war", "calculadora-api", "calculadora-core"
+include "calculadora-ear", "calculadora-war", "calculadora-api", "calculadora-core", "calculadora-ejb", "calculadora-ejb-client"

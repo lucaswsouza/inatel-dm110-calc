@@ -1,4 +1,3 @@
 dependencies {
-	compile project(':calculadora-api')
 	compile project(':calculadora-ejb-client')
 }

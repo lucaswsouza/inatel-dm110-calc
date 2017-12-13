@@ -2,8 +2,11 @@ apply plugin: 'ear'
 
 dependencies {
 	deploy project(path:':calculadora-war', configuration:'archives')
+	deploy project(path: ':calculadora-ejb')
+
 	earlib project(':calculadora-api')
 	earlib project(':calculadora-core')
+	earlib project(':calculadora-ejb-client')
 }
 
 ear{
@@ -12,6 +15,11 @@ ear{
 		def warVersion = project(':calculadora-war').version
 		def warFileName = warName + "-" + warVersion + ".war"
 		webModule(warFileName, 'calculadoraDM110')
+
+		def ejbName = project(':calculadora-ejb').name
+		def ejbVersion = project(':calculadora-ejb').version
+		def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+		module(ejbFileName, 'ejb')	
 	}
 
 }
